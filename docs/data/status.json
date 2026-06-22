@@ -1,4 +1,77 @@
 {
-  "generated_at": null,
-  "stocks": []
+  "generated_at": "2026-06-22T17:04:43+00:00",
+  "stocks": [
+    {
+      "ticker": "NVDA",
+      "market": "us",
+      "price": 209.60000610351562,
+      "sma20": 211.29900131225585,
+      "sma50": 209.82520080566405,
+      "status20": "below",
+      "status50": "below",
+      "cross20_date": "2026-06-03",
+      "cross50_date": "2026-06-22",
+      "last_cross_date": "2026-06-22"
+    },
+    {
+      "ticker": "TEVA.TA",
+      "market": "il",
+      "price": 9379.0,
+      "sma20": 9762.3,
+      "sma50": 9892.4,
+      "status20": "below",
+      "status50": "below",
+      "cross20_date": "2026-06-16",
+      "cross50_date": "2026-06-16",
+      "last_cross_date": "2026-06-16"
+    },
+    {
+      "ticker": "MSFT",
+      "market": "us",
+      "price": 368.57501220703125,
+      "sma20": 410.62274780273435,
+      "sma50": 412.8858990478516,
+      "status20": "below",
+      "status50": "below",
+      "cross20_date": "2026-06-05",
+      "cross50_date": "2026-06-09",
+      "last_cross_date": "2026-06-09"
+    },
+    {
+      "ticker": "AAPL",
+      "market": "us",
+      "price": 300.0,
+      "sma20": 303.1480026245117,
+      "sma50": 289.53020080566404,
+      "status20": "below",
+      "status50": "above",
+      "cross20_date": "2026-06-08",
+      "cross50_date": "2026-04-15",
+      "last_cross_date": "2026-06-08"
+    },
+    {
+      "ticker": "ICL.TA",
+      "market": "il",
+      "price": 1499.0,
+      "sma20": 1693.4,
+      "sma50": 1706.26,
+      "status20": "below",
+      "status50": "below",
+      "cross20_date": "2026-06-01",
+      "cross50_date": "2026-06-05",
+      "last_cross_date": "2026-06-05"
+    },
+    {
+      "ticker": "POLI.TA",
+      "market": "il",
+      "price": 6741.0,
+      "sma20": 6983.8,
+      "sma50": 7562.58,
+      "status20": "below",
+      "status50": "below",
+      "cross20_date": "2026-05-13",
+      "cross50_date": "2026-05-14",
+      "last_cross_date": "2026-05-14"
+    }
+  ]
 }
