@@ -1,4 +1,4 @@
 {
-  "us": ["AAPL", "MSFT", "NVDA"],
-  "il": ["TEVA.TA", "ICL.TA", "POLI.TA"]
+  "us": ["CIEN", "CAT", "NBIS", "CLS", "AVGO", "JPM", "SHLD", "CRWD", "MELI", "SOFI", "IREN", "GS", "MU", "V", "MA", "RKLB", "LITE", "VIRT", "TE", "BE", "NXT", "PLUG"],
+  "il": ["ACCL.TA", "ARIN.TA", "AVGD.TA", "AYAL.TA", "ENLT.TA", "ESLT.TA", "GAGR.TA", "GLTL.TA", "GNRS.TA", "HIPR.TA", "IBI.TA", "KRDI.TA", "MISH.TA", "MLRN.TA", "MNIF.TA", "MTAV.TA", "NVPT.TA", "NXSN.TA", "QLTU.TA", "SOFW.TA", "TASE.TA", "TLSY.TA", "BIGT.TA", "CMER.TA", "NXTM.TA"]
 }
