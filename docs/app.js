@@ -29,30 +29,36 @@ function statusBadge(status, date) {
          (date ? `<span class="cross-date">since ${fmtDate(date)}</span>` : "");
 }
 
-function renderTable(tbodyEl, countEl, stocks) {
+function renderTable(listEl, countEl, stocks) {
   countEl.textContent = stocks.length;
 
   if (stocks.length === 0) {
-    tbodyEl.innerHTML = `<tr><td colspan="5" class="empty-state">No tickers in this market yet. Add some to <code>docs/data/watchlist.json</code>.</td></tr>`;
+    listEl.innerHTML = `<div class="empty-state">No tickers in this market yet. Add some to <code>docs/data/watchlist.json</code>.</div>`;
     return;
   }
 
-  tbodyEl.innerHTML = stocks.map((s) => `
-    <tr tabindex="0" data-ticker="${s.ticker}">
-      <td class="ticker-cell">${s.ticker}</td>
-      <td class="price-cell">${fmtPrice(s.price)}</td>
-      <td>${statusBadge(s.status20, s.cross20_date)}</td>
-      <td>${statusBadge(s.status50, s.cross50_date)}</td>
-      <td class="last-cross-cell">${fmtDate(s.last_cross_date)}</td>
-    </tr>
+  listEl.innerHTML = stocks.map((s) => `
+    <div class="stock-card" tabindex="0" data-ticker="${s.ticker}" role="button">
+      <div style="flex: 1;">
+        <div class="ticker-cell">
+          ${s.ticker}
+          <span class="hint">${fmtPrice(s.price)}</span>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 6px;">
+          ${statusBadge(s.status20, s.cross20_date)}
+          ${statusBadge(s.status50, s.cross50_date)}
+        </div>
+      </div>
+      <div class="last-cross-cell">${fmtDate(s.last_cross_date)}</div>
+    </div>
   `).join("");
 
-  tbodyEl.querySelectorAll("tr[data-ticker]").forEach((row) => {
-    row.addEventListener("click", () => openModal(row.dataset.ticker, stocks));
-    row.addEventListener("keydown", (e) => {
+  listEl.querySelectorAll(".stock-card").forEach((card) => {
+    card.addEventListener("click", () => openModal(card.dataset.ticker, stocks));
+    card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        openModal(row.dataset.ticker, stocks);
+        openModal(card.dataset.ticker, stocks);
       }
     });
   });
@@ -191,8 +197,8 @@ async function init() {
     const us = data.stocks.filter((s) => s.market === "us");
     const il = data.stocks.filter((s) => s.market === "il");
 
-    renderTable(document.querySelector("#us-table tbody"), document.getElementById("us-count"), us);
-    renderTable(document.querySelector("#il-table tbody"), document.getElementById("il-count"), il);
+    renderTable(document.getElementById("us-list"), document.getElementById("us-count"), us);
+    renderTable(document.getElementById("il-list"), document.getElementById("il-count"), il);
     renderTape(data.stocks, data.generated_at);
   } catch (err) {
     console.error("Failed to load data/status.json", err);

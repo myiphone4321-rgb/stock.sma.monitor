@@ -31,18 +31,7 @@
       <h2>US Market</h2>
       <span class="count" id="us-count">0</span>
     </div>
-    <table class="stock-table" id="us-table" aria-label="US watchlist">
-      <thead>
-        <tr>
-          <th>Ticker</th>
-          <th>Price</th>
-          <th>SMA20</th>
-          <th>SMA50</th>
-          <th>Last cross</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="stock-list" id="us-list" aria-label="US watchlist"></div>
   </section>
 
   <section class="market-section">
@@ -50,18 +39,7 @@
       <h2>Tel Aviv Market</h2>
       <span class="count" id="il-count">0</span>
     </div>
-    <table class="stock-table" id="il-table" aria-label="Tel Aviv watchlist">
-      <thead>
-        <tr>
-          <th>Ticker</th>
-          <th>Price</th>
-          <th>SMA20</th>
-          <th>SMA50</th>
-          <th>Last cross</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="stock-list" id="il-list" aria-label="Tel Aviv watchlist"></div>
   </section>
 
 </main>
@@ -108,7 +86,7 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
