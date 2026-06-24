@@ -203,11 +203,14 @@ def main() -> int:
         log("Watchlist is empty. Add tickers to docs/data/watchlist.json.")
 
     results = []
+    fetch_errors = []
     for ticker, market in all_tickers:
         log(f"Fetching {ticker} ({market})...")
         result = process_ticker(ticker, market)
         if result:
             results.append(result)
+        else:
+            fetch_errors.append(ticker)
         # Be polite to Yahoo Finance between requests.
         time.sleep(0.5)
 
@@ -225,6 +228,7 @@ def main() -> int:
         json.dump(
             {
                 "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "fetch_errors": fetch_errors,
                 "stocks": results,
             },
             f,

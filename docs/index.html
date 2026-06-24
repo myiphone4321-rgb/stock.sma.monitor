@@ -5,23 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SMA Monitor — US &amp; Tel Aviv</title>
 <link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+<!-- Error banner: shown only when one or more tickers failed to fetch -->
+<div class="error-banner" id="error-banner" hidden>
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <circle cx="8" cy="8" r="7.25" stroke="white" stroke-width="1.5"/>
+    <path d="M8 4.5v4M8 10.5v1" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <span id="error-text">Error fetching data</span>
+</div>
 
 <header class="site-header">
   <h1 class="site-title">SMA Monitor<span class="dot">.</span></h1>
   <div class="site-meta">
-    <div><strong>Last updated:</strong> <span id="updated-at">—</span></div>
-    <div><a href="https://github.com/myiphone4321-rgb/stock.sma.monitor" target="_blank" rel="noopener">view source</a></div>
+    <strong>Last updated:</strong> <span id="updated-at">—</span>
   </div>
 </header>
 
-<div class="tape" aria-label="Stocks that crossed an SMA today">
-  <div class="tape-track" id="tape-track">
-    <!-- populated by app.js -->
-  </div>
+<!-- Today's crosses scrollable strip -->
+<div class="tape" aria-label="Stocks that crossed an SMA recently">
+  <div class="tape-track" id="tape-track"><!-- populated by app.js --></div>
 </div>
 
 <main>
@@ -31,7 +36,7 @@
       <h2>US Market</h2>
       <span class="count" id="us-count">0</span>
     </div>
-    <div class="stock-list" id="us-list" aria-label="US watchlist"></div>
+    <div id="us-list"></div>
   </section>
 
   <section class="market-section">
@@ -39,19 +44,20 @@
       <h2>Tel Aviv Market</h2>
       <span class="count" id="il-count">0</span>
     </div>
-    <div class="stock-list" id="il-list" aria-label="Tel Aviv watchlist"></div>
+    <div id="il-list"></div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  Price data via Yahoo Finance, refreshed automatically twice each trading day.
-  Edit <code>docs/data/watchlist.json</code> in the repo to change which tickers are tracked.
+  Refreshed automatically twice each trading day.
+  Edit <code>docs/data/watchlist.json</code> to change tracked tickers.
 </footer>
 
 <!-- Chart modal -->
 <div class="modal-overlay" id="modal-overlay" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-handle"></div>
     <div class="modal-header">
       <div>
         <h3 id="modal-title">—</h3>
@@ -66,22 +72,22 @@
         <span class="value" id="stat-price">—</span>
       </div>
       <div class="modal-stat">
-        <span class="label">SMA20</span>
+        <span class="label">SMA 20</span>
         <span class="value" id="stat-sma20">—</span>
       </div>
       <div class="modal-stat">
-        <span class="label">SMA50</span>
+        <span class="label">SMA 50</span>
         <span class="value" id="stat-sma50">—</span>
       </div>
     </div>
 
     <div class="chart-wrap">
-      <canvas id="price-chart" height="260"></canvas>
+      <canvas id="price-chart" height="240"></canvas>
     </div>
     <div class="legend-row">
-      <span><span class="swatch" style="background:#e8e2d0"></span>Close</span>
-      <span><span class="swatch" style="background:#2bb3a3"></span>SMA20</span>
-      <span><span class="swatch" style="background:#c9a227"></span>SMA50</span>
+      <span><span class="swatch" style="background:#0a84ff"></span>Close</span>
+      <span><span class="swatch" style="background:#34c759"></span>SMA 20</span>
+      <span><span class="swatch" style="background:#ff9500"></span>SMA 50</span>
     </div>
   </div>
 </div>
