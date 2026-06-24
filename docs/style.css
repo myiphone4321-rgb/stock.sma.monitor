@@ -119,11 +119,11 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-wrap: nowrap;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -202,6 +202,8 @@ main {
   max-width: 720px;
   margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-lg);
+  min-height: calc(100vh - 200px);
+  width: 100%;
 }
 
 .market-section { margin-bottom: var(--spacing-2xl); }
@@ -481,8 +483,6 @@ main {
   margin: 0 auto var(--spacing-lg);
 }
 
-@media (min-width: 640px) { .modal-handle { display: none; } }
-
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -610,10 +610,36 @@ main {
   }
 }
 
+/* Mobile: reduce padding slightly to fit better on small screens */
 @media (max-width: 480px) {
-  .site-title { font-size: 22px; }
-  .market-heading h2 { font-size: 18px; }
-  .modal-stats { grid-template-columns: repeat(3, 1fr); }
+  main {
+    padding: var(--spacing-md) var(--spacing-md);
+  }
+  .site-header {
+    padding: var(--spacing-md) var(--spacing-md);
+  }
+  .tape-track {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  .site-title {
+    font-size: 20px;
+  }
+  .site-meta {
+    font-size: 11px;
+  }
+  .stock-card {
+    padding: var(--spacing-md) var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  .market-heading h2 {
+    font-size: 17px;
+  }
+  .ticker-name {
+    font-size: 15px;
+  }
+  .modal {
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
