@@ -1,4 +1,4 @@
 {
-  "us": ["CIEN", "CAT", "NBIS", "CLS", "AVGO", "JPM", "SHLD", "CRWD", "MELI", "SOFI", "IREN", "GS", "MU", "V", "MA", "RKLB", "LITE", "VIRT", "TE", "BE", "NXT"],
+  "us": ["CIEN", "CAT", "NBIS", "CLS", "AVGO", "JPM", "SHLD", "CRWD", "MELI", "SOFI", "IREN", "GS", "MU", "V", "MA", "RKLB", "LITE", "VIRT", "BE", "NXT"],
   "il": ["ACCL.TA", "ARIN.TA", "AVGD.TA", "AYAL.TA", "ENLT.TA", "ESLT.TA", "GAGR.TA", "GLTL.TA", "GNRS.TA", "HIPR.TA", "IBI.TA", "KRDI.TA", "MISH.TA", "MLRN.TA", "MNIF.TA", "MTAV.TA", "NVPT.TA", "NXSN.TA", "QLTU.TA", "SOFW.TA", "TASE.TA", "TLSY.TA", "BIGT.TA", "CMER.TA", "NXTM.TA"]
 }
